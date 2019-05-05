@@ -1,12 +1,18 @@
 
-/** ����cookie */
+/** 设置cookie
+* name  (String) key
+* vlaue (String) 值
+* days  (Number) 保留时长
+*/
 function setCookie(name, value, days) {
     var exp = new Date();
     exp.setTime(exp.getTime() + days * 24 * 60 * 60 * 1000);
     document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString();
 };
 
-/** ��ȡcookie */
+/** 获取cookie
+* name (String) cookie的key值
+*/
 function getCookie(name) {
     var cookie = document.cookie.replace(/[ ]/g, ""),
         arr = cookie.split(';');
@@ -18,7 +24,9 @@ function getCookie(name) {
     };
 };
 
-/** ɾ�� cookie */
+/** 删除cookie
+* name (String) cookie的key值
+*/
 function delCookie(name) {
     var exp = new Date();
     exp.setTime(exp.getTime() - 1);
